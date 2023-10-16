@@ -32,7 +32,7 @@ public class LoginController {
 			"content-type=application/json" }, consumes = {
 					MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody
-	public Result fetchProfile(@RequestBody LoginUser user) {
+	public Result fetchUser(@RequestBody LoginUser user) {
 		List<User> users = this.loginService.fetchUser(user);
 		System.out.println("result" + users);
 		return users.size() != 1 ? new Result(-1, "Please enter your credentials correctly.", "") : new Result(users.toArray());
