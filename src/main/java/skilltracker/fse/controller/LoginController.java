@@ -35,7 +35,7 @@ public class LoginController {
 	public Result fetchProfile(@RequestBody LoginUser user) {
 		List<User> users = this.loginService.fetchUser(user);
 		System.out.println("result" + users);
-		return users.size() != 1 ? new Result(-1, "No results found for ", "") : new Result(users.toArray());
+		return users.size() != 1 ? new Result(-1, "Please enter your credentials correctly.", "") : new Result(users.toArray());
 	}
 
 }
