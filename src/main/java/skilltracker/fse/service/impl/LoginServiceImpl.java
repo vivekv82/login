@@ -18,7 +18,7 @@ public class LoginServiceImpl implements LoginService {
 
 	public List<User> fetchUser(LoginUser loginUser) {
 		System.out.println("Calling fetchProfile");
-		return this.loginRepository.fetchUser(loginUser.getUserid(), loginUser.getPassword());
+		return this.loginRepository.fetchUser(loginUser.getUserid().trim(), loginUser.getPassword().trim());
 
 	}
 
